@@ -3,6 +3,7 @@ import config from '@/amplify_outputs.json';
 import {NextRequest, NextResponse} from "next/server";
 import {fetchAuthSession} from "@aws-amplify/auth/server";
 
+console.log('configuring...');
 export const { runWithAmplifyServerContext } = createServerRunner({config})
 
 export async function isAuthenticated(request: NextRequest, response: NextResponse) {

@@ -17,12 +17,12 @@ export async function signUpAction(previous: SignUpFormData, formData: FormData)
 		console.log('values:', firstName, lastName, email, password);
 		await createAuthUser(email, password);
 		await createUserProfile(firstName, lastName);
-		return {firstName, lastName, email, password, error: ''};
+		return {firstName, lastName, email, password, error: '', success: true};
 	} catch (error) {
 		const e: Error = error as Error;
 		console.log(error);
 
-		return {firstName, lastName, email, password, error: e.message};
+		return {firstName, lastName, email, password, error: e.message, success: false};
 	}
 
 }

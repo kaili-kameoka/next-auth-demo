@@ -13,12 +13,12 @@ export async function loginAction(previous: LoginFormData, formData: FormData): 
 
 	try {
 		await login(email, password);
-		return {email, password, error: ''};
+		return {email, password, error: '', success: false};
 	} catch (error) {
 		const e: Error = error as Error;
 		console.log(error);
 
-		return {email, password, error: e.message};
+		return {email, password, error: e.message, success: false};
 	}
 
 }

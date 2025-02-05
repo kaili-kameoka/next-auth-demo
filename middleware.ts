@@ -2,6 +2,7 @@ import {NextRequest, NextResponse} from "next/server";
 import {isAuthenticated} from "@/lib/amplify/server";
 
 export async function middleware(request: NextRequest) {
+	console.log('middleware starting middleware');
 	const response = NextResponse.next();
 	const isAuth = await isAuthenticated(request, response);
 	console.log('isAuth', isAuth);

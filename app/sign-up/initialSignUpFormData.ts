@@ -5,7 +5,8 @@ const initialSignUpFormData: SignUpFormData = {
 	lastName: '',
 	email: '',
 	password: '',
-	error: ''
+	error: '',
+	success: false
 }
 
 export default initialSignUpFormData;
